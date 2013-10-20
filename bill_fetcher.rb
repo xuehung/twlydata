@@ -28,7 +28,7 @@ class Bill
 				filepath = "#{@@billFolder}/#{billId}.json"
 				if not File.exists?(filepath)
 					File.open(filepath, "w") do |f|
-						f.write(result)
+						f.write(result.to_json)
 						puts "Saving the bill into #{filepath}"
 					end
 				end
